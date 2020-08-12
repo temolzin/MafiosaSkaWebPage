@@ -1,34 +1,36 @@
-Magister - single-page Bootstrap template
-=============
+# Hoolman Web Page
 
-Magister is a free responsive, single-page HTML5 template base on Twitter Bootstrap framework. 
+Hoolman web page,
+is the init page of the hoolman mark.
+
+## Preview
+
+[![Preview Mafiosa Ska WebPage](https://github.com/temolzin/MafiosaSkaWebPage/blob/master/assets/images/gh_1.png)](https://github.com/temolzin/MafiosaSkaWebPage/blob/master/assets/images/gh_1.png)
+
+[![Preview Mafiosa Ska WebPage](https://github.com/temolzin/MafiosaSkaWebPage/blob/master/assets/images/gh_2.png)](https://github.com/temolzin/MafiosaSkaWebPage/blob/master/assets/images/gh_2.png)
+
+[![Preview Mafiosa Ska WebPage](https://github.com/temolzin/MafiosaSkaWebPage/blob/master/assets/images/gh_3.png)](https://github.com/temolzin/MafiosaSkaWebPage/blob/master/assets/images/gh_3.png)
+
+### Pre-requiriments 📋
+
+Only you need download like zip or install git in your pc
+
+### Install 🔧
+
+For download you need have git installed, after you must execute this command for install the project 
+
+```
+git clone https://github.com/temolzin/MafiosaSkaWebPage.git
+```
+
+## Author ✒️
 
 
-License
--------
-**Creative Commons Attribution 3.0** - http://creativecommons.org/licenses/by/3.0/
+* **Temolzin Roldan** - *Creator* - [Temolzin](https://github.com/temolzin)
 
 
-Features
------------
+## License 📄
 
-A few features that make this template unique
-
-* HTML is clean and fat-free, you will not find any useless code inside this template.
-* Responsive design
-* Overral quality, worth to be premium template.
+This project contain a MIT License, can you see the file in [LICENSE.md](https://github.com/temolzin/MafiosaSkaWebPage/blob/master/LICENSE)
 
 
-Bug tracker
------------
-
-Found a bug? Please create an issue here on GitHub! 
-https://github.com/pozh/Magister/issues
-
-
-
-Credits
--------
-* Design and development: **Sergey Pozhilov** - http://pozhilov.com
-* Photos used in template: **Unsplash** - http://unsplash.com
-* More free templates by Sergey: http://gettemplate.com
