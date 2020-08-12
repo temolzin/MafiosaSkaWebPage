@@ -20,6 +20,48 @@ body {
 	font-weight: normal;
 }
 
+/*Temolzin*/
+.parrafo { 
+	font-family: 'Wire One', Helvetica, Arial, sans-serif;
+	font-weight:normal;
+	font-size:5em;
+	margin-bottom:8px; 
+	color: #FFFFFF; 
+	line-height:1em;
+	line-height:1.2em;
+	font-size:2.5em;
+	margin-top:0;
+	margin-bottom:20px; 
+	text-align: justify;
+}
+/*Temolzin*/
+
+/*Temolzin*/
+.parrafoCentro { 
+	font-family: 'Wire One', Helvetica, Arial, sans-serif;
+	font-weight:normal;
+	font-size:5em;
+	margin-bottom:8px; 
+	color: #FFFFFF; 
+	line-height:1em;
+	line-height:1.2em;
+	font-size:2.5em;
+	margin-top:0;
+	margin-bottom:20px; 
+	text-align: center;
+}
+/*Temolzin*/
+
+/*Temolzin*/
+.firma { 
+	font-size:.8em;
+	line-height:1.3em;
+	font-weight:normal;
+	margin-bottom:30px;
+	color: #FFFFFF; 
+}
+/*Temolzin*/
+
 
 /********************************************************/
 /*                    Navigation bar                    */
@@ -165,7 +207,6 @@ a:hover, a:active { color:#FFFFFF; text-decoration: underline; }
 		font-size:1.3em;
 	}
 }
-
 
 /********************************************************/
 /*                   UI - Buttons                       */
@@ -380,5 +421,125 @@ iframe {
 	color: inherit;
 }
 
+/***************INTEGRANTES*************/
+.member-img img{
+	padding-top: 10px;
+	width: 100%;
 
+}
+.team-profile{
+	background:rgba(0,0,0,0);
+
+}
+.member-social {
+	background: #EECDA3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #93F15E, #4DD9EA );  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #93F15E, #4DD9EA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.member-social .fa{
+	color: white;
+	padding: 20px 5px;
+	font-size: 20px;
+}
+
+.member-social .fa:hover {
+	color: #5f98f4;
+}
+
+.team-data {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+/*Team media queries*/
+@media (max-width: 768px){
+	.team-data .col-xs-6 {
+		width: 50%;
+		padding-top : 10px;
+	}
+}
+
+/*Services*/
+
+.my-services {
+	margin-top: 50px;
+}
+
+
+.service {
+	margin-top: 20px;
+}
+
+@media (max-width: 768px){
+	.img-responsive {
+		width: 60% !important;
+	}
+}
+
+@media (max-width: 320px){
+	.my-services img{
+		display: none !important;
+
+	}
+	.my-services{
+		text-align: center;
+	}
+}
+/***************TERMINA INTEGRANTES*************/
+/******EMPIEZA FORMULARIO**************/
+.formBox{
+	margin-top: 20px;
+	padding: 30px;
+}
+.formBox  h1{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	margin-bottom: 50px;
+	text-transform: uppercase;
+	font-size: 48px;
+}
+.inputBox{
+	position: relative;
+	box-sizing: border-box;
+	margin-bottom: 50px;
+}
+.inputBox .inputText{
+	position: absolute;
+    font-size: 24px;
+    line-height: 50px;
+    transition: .5s;
+    opacity: .5;
+    color: #FFFFFF;
+}
+.inputBox .input{
+	position: relative;
+	width: 100%;
+	height: 50px;
+	background: #ffffff70;
+	border: none;
+    outline: none;
+    font-size: 24px;
+    border-bottom: 1px solid rgba(0,0,0,.5);
+
+}
+.focus .inputText{
+	transform: translateY(-30px);
+	font-size: 18px;
+	opacity: 1;
+	color: #00bcd4;
+
+}
+textarea{
+	height: 100px !important;
+}
+.button{
+	width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    background: #03A9F4;
+    color: #fff;
+}
+/**************TERMINA FORMULARIO******************/
 

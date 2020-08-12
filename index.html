@@ -1,15 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Página Oficial de la Mafiosa Ska">
 	<meta name="author"      content="Temolzin Roldan">
+	<meta property="og:url"  content="www.lamafiosaska.com.mx" />
+	<!-- METADATOS para facebook -->
+	<meta property="og:type"               content="website" />
+	<meta property="og:title"              content="La Mafiosa Ska" />
+	<meta property="og:description"        content="Página Oficial de la Mafiosa Ska" />
+	<meta property="og:image"              content="https://scontent.fmex16-1.fna.fbcdn.net/v/t1.0-9/55444985_310412706313648_4844372494527758336_n.jpg?_nc_cat=108&_nc_ht=scontent.fmex16-1.fna&oh=dc0f629232502851b469d151ec179618&oe=5D87E56F" />
 	
-	<title>LA MAFIOSA SKA</title>
+	<title>La Mafiosa Ska</title>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 
 	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
-	
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script type="text/javascript">
+		function limpiarCajas() {
+			$(":text").each(function() {
+				$($(this)).val('');
+			});
+			$('#mensaje').each(function() {
+				$($(this)).val('');
+			});
+		}
+		function clicWhats(){
+			swal({
+				title: "Whatsapp",
+				text: "Numeros: 5535092965 y 5533697518",
+				icon: "success",
+				button: "Aceptar",
+			});
+		}
+		function soloLetras(e) {
+			key = e.keyCode || e.which;
+			tecla = String.fromCharCode(key).toLowerCase();
+			letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+			especiales = [8, 37, 39, 46];
+			tecla_especial = false;
+			for (var i in especiales) {
+				if (key == especiales[i]) {
+					tecla_especial = true;
+					break;
+				}
+			}
+			if (letras.indexOf(tecla) == -1 && !tecla_especial)
+				return false;
+		}
+		function soloNumeros(e)
+		{
+			var keynum = window.event ? window.event.keyCode : e.which;
+			if ((keynum == 8) || (keynum == 46))
+				return true;
+			return /\d/.test(String.fromCharCode(keynum));
+		}
+	</script>
+
+	<!------ Include the above in your HEAD tag ---------->
+	<link href="https://fonts.googleapis.com/css?family=Mirza:400,700|Roboto" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
 	<!-- Bootstrap itself -->
 	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
@@ -32,7 +88,8 @@
 			<ul class="dropdown-menu" role="menu">
 				<li><a href="#head" class="active">Inicio</a></li>
 				<li><a href="#about">Acerca de nosotros</a></li>
-				<li><a href="#galeria">Galería</a></li>
+				<li><a href="#galeria">Vídeos</a></li>
+				<li><a href="#integrantes">Integrantes</a></li>
 				<li><a href="#contact">Contáctanos</a></li>
 			</ul>
 		</div>
@@ -48,8 +105,8 @@
 			<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">	
 
 				<!-- Site Title, your name, HELLO msg, etc. -->
-				<h1 class="title">La Mafiosa Ska</h1>
-				<h2 class="subtitle"><img align="text-center" src="assets/images/gt_favicon.png" width="200px" height="200px" class="img-fluid"></h2>
+				<h1 class="title">La Mafiosa ska</h1>
+				<h2 class="subtitle"><img align="text-center" src="assets/images/gt_favicon.png" width="200px" height="220px" class="img-fluid"></h2>
 
 				<!-- Short introductory (optional) -->
 				<h3 class="tagline">
@@ -58,8 +115,8 @@
 				
 
 				<!-- Nice place to describe your site in a sentence or two -->
-				<p class="text-center"><a href="https://www.facebook.com"><img width="32px" height="32px" class="img-fluid" src="assets/images/icon/face.png"></a> &nbsp;&nbsp;&nbsp;&nbsp;
-				<a href="#"><img width="32px" height="32px" class="img-fluid" src="assets/images/icon/whats.png"></a></p>
+				<p class="text-center"><a href="https://www.facebook.com/La-Mafiosa-Ska-oficial-310407349647517/"><img width="32px" height="32px" class="img-fluid" src="assets/images/icon/face.png"></a> &nbsp;&nbsp;&nbsp;&nbsp;
+				<a onclick="clicWhats();" href="#"><img width="32px" height="32px" class="img-fluid" src="assets/images/icon/whats.png"></a></p>
 	
 			</div> <!-- /col -->
 		</div> <!-- /row -->
@@ -71,17 +128,13 @@
 <section class="section" id="about">
 	<div class="container">
 	
-		<h2 class="text-center title">About me</h2>
+		<h2 class="text-center title">Acerca de nosotros</h2>
 		<div class="row">
-			<div class="col-sm-4 col-sm-offset-2">    
-				<h5><strong>Where's my lorem ipsum?<br></strong></h5>
-				<p>Well, here it is: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, ullam, ducimus, eaque, ex autem est dolore illo similique quasi unde sint rerum magnam quod amet iste dolorem ad laudantium molestias enim quibusdam inventore totam fugit eum iusto ratione alias deleniti suscipit modi quis nostrum veniam fugiat debitis officiis impedit ipsum natus ipsa. Doloremque, id, at, corporis, libero laborum architecto mollitia molestiae maxime aut deserunt sed perspiciatis quibusdam praesentium consectetur in sint impedit voluptates! Deleniti, sequi voluptate recusandae facere nostrum?</p>    
-			</div>
-			<div class="col-sm-4">
-				<h5><strong>More, more lipsum!<br></strong></h5>    
-				<p>Tempore, eos, voluptatem minus commodi error aut eaque neque consequuntur optio nesciunt quod quibusdam. Ipsum, voluptatibus, totam, modi perspiciatis repudiandae odio ad possimus molestias culpa optio eaque itaque dicta quod cupiditate reiciendis illo illum aspernatur ducimus praesentium quae porro alias repellat quasi cum fugiat accusamus molestiae exercitationem amet fugit sint eligendi omnis adipisci corrupti. Aspernatur.</p>    
-				<h5><strong>Author links<br></strong></h5>    
-				<p><a href="http://be.net/pozhilov9409">Behance</a> / <a href="https://twitter.com/serggg">Twitter</a> / <a href="http://linkedin.com/pozhilov">LinkedIn</a> / <a href="https://www.facebook.com/pozhilov">Facebook</a></p>
+			<div class="col-sm-8 col-sm-offset-2">    
+				<h5 class="text-center subtitle">¿Quiénes somos?<br></h5>
+				<p class="parrafo text-justify">La Mafiosa Ska comprende 8 integrantes especialistas en el movimiento y que gracias a ello y al público conocedor es muy bien recibido en cada uno de los escenarios donde se presenta “LA MAFIOSA SKA”, actualmente existe un video en vivo de Sesiones de la música de tributos y presentando un sencillo titulado “Dulce ska” tema que exista ya en plataformas digitales como Claro música, Spotify entre otras, y entrevistas para sistemas de radio por internet y en  Chilanguita TV</p>    
+				<br>
+				<p class="text-center"><img class="text-center" src="assets/images/leo.png" width="300px" height="300px" class="img-fluid"></p>
 			</div>
 		</div>
 	</div>
@@ -156,32 +209,271 @@
 	</div>
 </section>
 
+<section class="section" id="integrantes">
+	<div class="container">
+		<h2 class="text-center title">Integrantes</h2>
+		<p class="lead text-center">
+			Te presentamos los músicos que integran a la Mafiosa Ska y sus Redes Sociales
+		</p>
+	    <div class="row team-data">
+	    	<!-- member 1 here  -->
+            <div class="col-md-4 col-sm-4 col-xs-12 col-sm-offset-2">
+              <div class="team-profile">
+                <div class="member-img" align="center">
+                  <img width="220px" height="350px" src="assets/images/integrantes/temo.jpg" alt="">
+                </div>
+                <h4 class="parrafoCentro" align="center">Temolzin Roldan<br>(Trombonista)</h4>
+                <div class="member-social" align="center">
+                  <a class="img-fluid" href="https://www.facebook.com/temolzin"><i class="fa fa-facebook"></i></a>
+                </div>
+               </div>
+            </div>
+            <!-- member 1 ends here  -->
+            <!-- member 2 here  -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="team-profile">
+                <div class="member-img" align="center">
+                  <img width="220px" height="350px" src="assets/images/integrantes/goyo.jpg" alt="">
+                </div>
+                <h4 class="parrafoCentro" align="center">Enrique Martínez<br>(Trompetista)</h4>
+                <div class="member-social" align="center">
+                  <a href="https://www.facebook.com/profile.php?id=100011331760615"><i class="fa fa-facebook"></i></a>
+                </div>
+              </div>
+            </div> 
+            <!-- member 2 ends here  -->
+            <!-- member 3 here  -->
+            <div class="col-md-4 col-sm-4 col-xs-12 col-sm-offset-2">
+              <div class="team-profile">
+                <div class="member-img" align="center">
+                  <img width="220px" height="350px" src="assets/images/integrantes/cristian.jpg" alt="">
+                </div>
+                <h4 class="parrafoCentro" align="center">Cristian Escobar<br>(Vocalista)</h4>
+                <div class="member-social" align="center">
+                  <a href="https://www.facebook.com/profile.php?id=100015660196647"><i class="fa fa-facebook"></i></a>
+                </div>
+              </div>
+            </div>  <!-- member 3 ends here  -->
+            <!-- member 4 here  -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="team-profile">
+                <div class="member-img" align="center">
+                  <img width="220px" height="350px" src="assets/images/integrantes/carlos.jpg" alt="">
+                </div>
+                <h4 class="parrafoCentro" align="center">Carlos Ocaña<br>(Bajista)</h4>
+                <div class="member-social" align="center">
+                  <a href="https://www.facebook.com/ocania"><i class="fa fa-facebook"></i></a>
+                </div>
+              </div>
+            </div>  <!-- member 4 ends here  -->
+            <!-- member 5 here  -->
+            <div class="col-md-4 col-sm-4 col-xs-12 col-sm-offset-2">
+              <div class="team-profile">
+                <div class="member-img" align="center">
+                  <img width="220px" height="350px" src="assets/images/integrantes/omar.jpg" alt="">
+                </div>
+                <h4 class="parrafoCentro" align="center">Omar Ocaña<br>(Baterista)</h4>
+                <div class="member-social" align="center">
+                  <a href="https://www.facebook.com/ocania"><i class="fa fa-facebook"></i></a>
+                </div>
+              </div>
+            </div>  <!-- member 5 ends here  -->
+            <!-- member 6 here  -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="team-profile">
+                <div class="member-img" align="center">
+                  <img width="220px" height="350px" src="assets/images/integrantes/reto.jpg" alt="">
+                </div>
+                <h4 class="parrafoCentro" align="center">Rick Reto<br>(Guitarrista)</h4>
+                <div class="member-social" align="center">
+                  <a href="https://www.facebook.com/retodz"><i class="fa fa-facebook"></i></a>
+                </div>
+              </div>
+            </div>  <!-- member 6 ends here  -->
+            <!-- member 5 here  -->
+            <div class="col-md-4 col-sm-4 col-xs-12 col-sm-offset-4">
+              <div class="team-profile">
+                <div class="member-img" align="center">
+                  <img width="220px" height="350px" src="assets/images/integrantes/isaac.jpg" alt="">
+                </div>
+                <h4 class="parrafoCentro" align="center">Isaac Juarez<br>(Tecladista)</h4>
+                <div class="member-social" align="center">
+                  <a href="https://www.facebook.com/chak777star"><i class="fa fa-facebook"></i></a>
+                </div>
+              </div>
+            </div>  <!-- member 5 ends here  -->
+	  </div>
+	</div>
+	  <!-- /.row -->
+
+	</div>
+	<!-- /.container -->
+</section>
+
 <!-- Fourth (Contact) section -->
 <section class="section" id="contact">
 	<div class="container">
-	
-		<h2 class="text-center title">Get in touch</h2>
+		<h2 class="text-center title">Contáctanos</h2>
+		<div class="formBox">
+			<form method="POST" id="fomularioContacto" name="fomularioContacto">
+				<div class="row">
+					<div class="col-sm-12">
+						<h1 class="subtitle">Escríbenos un mensaje</h1>
+					</div>
+				</div>
 
-		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2 text-center">
-				<p class="lead">Have a question about this template, or want to suggest a new feature?</p>
-				<p>Feel free to email me, or drop me a line in Twitter!</p>
-				<p><b>gt@gettemplate.com</b><br><br></p>
-				<ul class="list-inline list-social">
-					<li><a href="https://twitter.com/serggg" class="btn btn-link"><i class="fa fa-twitter fa-fw"></i> Twitter</a></li>
-					<li><a href="https://github.com/pozhilov" class="btn btn-link"><i class="fa fa-github fa-fw"></i> Github</a></li>
-					<li><a href="http://linkedin/in/pozhilov" class="btn btn-link"><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a></li>
-				</ul>
-			</div>
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="inputBox ">
+							<div class="parrafoCentro">Nombre(s)</div>
+							<input style="color: white" onkeypress="return soloLetras(event);" id="nombre" type="text" name="nombre" class="input">
+						</div>
+					</div>
+
+					<div class="col-sm-6">
+						<div class="inputBox">
+							<div class="parrafoCentro">Apellido</div>
+							<input style="color: white" onkeypress="return soloLetras(event);" id="apellido" type="text" name="apellido" class="input">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="inputBox">
+							<div class="parrafoCentro">Email</div>
+							<input style="color: white" id="email" type="text" name="email" class="input">
+						</div>
+					</div>
+
+					<div class="col-sm-6">
+						<div class="inputBox">
+							<div class="parrafoCentro">Teléfono</div>
+							<input style="color: white" maxlength="10" onkeypress="return soloNumeros(event);"  id="telefono" type="text" name="telefono" class="input">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="inputBox">
+							<div class="parrafoCentro">Asunto</div>
+							<input style="color: white" type="text" name="asunto" id="asunto" class="input">
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="inputBox">
+							<div class="parrafoCentro">Mensaje</div>
+							<textarea style="color: white" id="mensaje" name="mensaje" class="input"></textarea>
+						</div>
+					</div>
+				</div>
+
+				<div id="enviarForm" name="enviarForm" class="row col-sm-12">
+				</div>
+
+				<div class="row">
+					<div id="botonEnviar" name="botonEnviar" class="col-sm-12">
+						<input type="submit" name="" class="button" value="Enviar mensaje">
+					</div>
+				</div>
+				<!-- Ajax para enviar formulario -->
+				<script>
+					$(document).ready(function() {
+						$("#fomularioContacto").validate({
+							rules: {
+								nombre: {
+									required: true
+								},
+								apellido: {
+									required: true
+								},
+								email: {
+									required: true, 
+									email: true
+								},
+								telefono: {
+									required: true, 
+									number: true
+								},
+								mensaje: {
+									required: true
+								},
+								asunto: {
+									required: true
+								}
+							},
+							messages: {
+								nombre: {
+									required: "<p align='center'><font color='white' face='Times' size='4'>Debes escribir un Nombre</font></p>"
+								},
+								apellido: {
+									required:"<p align='center'><font color='white' face='Times' size='4'>Debes escribir un Apellido</font></p>"
+								},
+								email: {
+									required: "<p align='center'><font color='white' face= 'Times' size='4'>Ingresa un Email</font></p>",
+									email: "<p align='center'><font color='white' face= 'Times' size='4'>Ingresa un Email Válido</font></p>"
+								},
+								telefono:{
+									required: "<p align='center'><font color='white' face= 'Times' size='4'>Debes ingresar un número de teléfono</font></p>",
+									number: "<p align='center'><font color='white' face= 'Times' size='4'>Sólo se aceptan números</font></p>"
+								},
+								mensaje: {
+									required: "<p align='center'><font color='white' face='Times' size='4'>Debes escribir un Mensaje</font></p>"
+								},
+								asunto: {
+									required: "<p align='center'><font color='white' face= 'Times' size='4'>Debes escribir un Asunto del mensaje</font></p>"
+								}
+							},
+							submitHandler: function() {
+								$('#enviarForm').html('<div align="center"><img src="assets/images/loading.gif"/><br><p class="text-info lead">Cargando...</p></div>');
+								document.getElementById('botonEnviar').style.display = 'none';
+								$.ajax({
+									type: "POST",
+									url: 'assets/php/EnviarFormContacto.php',
+									data: $('#fomularioContacto').serialize(),
+									success: function(data) {
+										document.getElementById('enviarForm').innerHTML='';
+										document.getElementById('botonEnviar').style.display = 'block';
+										if(data == 'ok'){
+											swal({
+												title: "¡Éxito!",
+												text: "Se ha mandado el mensaje correctamente, nos comunicaremos lo más pronto posible",
+												icon: "success",
+												button: "Aceptar"
+											});
+											limpiarCajas();
+										} else {
+											swal({
+												title: "Error",
+												text: "Ha ocurrido un error al mandar el correo: " + data,
+												icon: "error",
+												button: "Aceptar"
+											});
+										}
+									}
+								});
+							}
+						});
+					});
+				</script>
+				<!--Termina AJAX-->
+			</form>
 		</div>
-
 	</div>
 </section>
 
+<footer class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">
+	<h2 class="firma">Elaborado por: <br>
+		<a href="https://www.facebook.com/temolzin"><img src="assets/images/icon/temoOk.png" width="60px" height="60px" class="img-fluid"></a><br>
+		Temolzin Itzae
+	</h2>
+</footer>
 
 <!-- Load js libs only when the page is loaded. -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <script src="assets/js/modernizr.custom.72241.js"></script>
 <!-- Custom template scripts -->
 <script src="assets/js/magister.js"></script>
