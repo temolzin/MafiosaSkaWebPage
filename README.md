@@ -1,7 +1,7 @@
-# Hoolman Web Page
+# Mafiosa Ska Web Page
 
-Hoolman web page,
-is the init page of the hoolman mark.
+Mafiosa Ska web page,
+Is a page of the Mafiosa Ska Band
 
 ## Preview
 
